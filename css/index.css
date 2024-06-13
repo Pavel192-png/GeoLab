@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+h1 {
+  text-align: center;
+  margin: 0;
+  padding: 23px 0; /* Добавляет отступ сверху и снизу */
+}
+h2{
+  text-align: left;
+  margin: 0;
+  padding: 20px ; /* Добавляет отступ сверху и снизу */
+}
+h3{
+  text-align: left;
+}
+/* Дополнительные стили для картинки, если нужно */
+img {
+  width: 100%;
+  display: block; /* Убирает лишние отступы вокруг изображения */
+  height: 63vh;/* Задайте желаемую высоту */
+  object-fit: cover;
+}
+
+
+

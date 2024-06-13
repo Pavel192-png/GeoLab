@@ -1,0 +1,108 @@
+.services-section {
+    text-align: center;
+    padding: 50px;
+  }
+  .services-container {
+    display: flex;
+    justify-content: center;
+  }
+  .service {
+    margin: 0 10px;
+    text-align: center;
+  }
+  .service img {
+    width: 400px;
+    height: 250px;
+    display: block;
+    margin: 0 auto; /* Центрирование изображения */
+  }
+  .service h3 {
+    margin: 10px 0;
+  }
+  .service button {
+    width: 170px;
+    height: 40px;
+    padding: 10px 20px;
+    background-color: #030d18;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  .service button:hover {
+    background-color: #1f5292;
+    transition: color 0.5s;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 100;
+  }
+  .popup-close {
+    float: right;
+    cursor: pointer;
+  }
+  .popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background-color: #f9f9f9; /* Светло-серый фон */
+    padding: 20px;
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Тень для объемности */
+    z-index: 100;
+  }
+  
+  .popup-close {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Стили для кнопок */
+  button {
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px; /* Закругленные углы для кнопок */
+    cursor: pointer;
+  }
+  
+  /* Стиль для кнопки закрытия */
+  .popup-close {
+    background-color: #ff5f5f; /* Красный цвет кнопки закрытия */
+    color: white;
+  }
+  
+  /* Стиль для кнопок изменения количества */
+  .popup button:not(.popup-close) {
+    background-color: #4CAF50; /* Синий цвет кнопок */
+    color: white;
+  }
+  
+  /* Стиль для кнопки "Купить" */
+  .popup button:last-child {
+    background-color: #4CAF50; /* Зеленый цвет кнопки "Купить" */
+    color: white;
+  }
+  
+  /* Стиль для поля ввода */
+  input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Закругленные углы для полей ввода */
+  }
+  

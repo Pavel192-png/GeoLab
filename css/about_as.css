@@ -1,0 +1,55 @@
+h3{
+    padding-left:  20px;
+}
+.slider-container {
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* Скругление углов */
+  }
+  
+  .slider {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    margin: 30px;
+  }
+  
+  .slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center; /* Центрирование текста в слайде */
+  }
+  
+  .slide h3 {
+    margin-top: 0;
+    text-align: center;
+    padding-left:  0px;
+  }
+  
+  .prev1, .next1 {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: -22px;
+    border-radius: 0 3px 3px 0; /* Скругление углов кнопки */
+  }
+  
+  .prev1 {
+    border-radius: 3px 0 0 3px; /* Скругление углов кнопки */
+    top: 90%;
+  }
+  
+  .next1 {
+    right: 150px;
+    top: 90%;
+  }
+  
