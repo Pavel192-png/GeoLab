@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Услуги</title>
+<link rel="icon" href="image/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="css/headers.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/services.css">
+<link rel="stylesheet" href="css/footer.css">
+
+</head>
+<body>
+
+<div class="header"><!--хедер-->
+  <div class="header-image" style="background-image: url('image/logo.png');"></div>
+  <div class="header-content">
+    <a href="index.html">Главная</a>
+    <a href="projects.html">Наши проекты</a>
+    <a href="services.html">Услуги</a>
+    <a href="about_us.html">О нас</a>
+  </div>
+  <div class="logos-container">
+    <a href="https://t.me/yourchannel" target="_blank"><!--ссылки-->
+      <div class="logo" style="background-image: url('image/tg.svg');"></div>
+    </a>
+    <a href="https://vk.com" target="_blank"><!--ссылки-->
+      <div class="logo" style="background-image: url('image/vk.svg');"></div> 
+    </a>
+    <a href="https://www.youtube.com" target="_blank"><!--ссылки-->
+      <div class="logo" style="background-image: url('image/youtube.svg');"></div> 
+    </a>
+  </div>
+</div>
+
+<h1 >Востребованные услуги</h1>
+
+<div class="services-section"><!--блок с услугами-->
+    <div class="services-container">
+      <div class="service">
+        <h3 style="text-align: center;">Разработка Геоинформационных систем</h3>
+        <img src="image/usluga1.jpg" alt="Услуга 1">
+        <button onclick="orderService(1)" data-price="4400">Заказать</button>
+      </div>
+      <div class="service">
+        <h3 style="text-align: center;">Космическая съемка</h3>
+        <img src="image/usluga2.webp" alt="Услуга 2">
+        <button onclick="orderService(2)" data-price="7000">Заказать</button>
+      </div>
+      <div class="service">
+        <h3 style="text-align: center;">Аэрофотосъемка</h3>
+        <img src="image/usluga3.png" alt="Услуга 3">
+        <button onclick="orderService(3)" data-price="12000">Заказать</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="header" style="height: 200px;">
+    <div class="footer-text" style="position: relative; left: -120px;">
+        <h3>Контактные данные:</h3>
+        <h3>8 800 555 35 35</h3>
+        <h3>geolab2000@gmail.com</h3>
+    </div>
+    <div class="header-content" style="position: relative; left: -120px;">
+      <a href="index.html">Главная</a>
+      <a href="projects.html">Наши проекты</a>
+      <a href="services.html">Услуги</a>
+      <a href="about_us.html">О нас</a>
+    </div>
+    <div class="logos-container" style="position: relative; left: -30px;">
+      <a href="https://t.me/yourchannel" target="_blank"><!--ссылки-->
+        <div class="logo" style="background-image: url('image/tg.svg');"></div>
+      </a>
+      <a href="https://vk.com" target="_blank"><!--ссылки-->
+        <div class="logo" style="background-image: url('image/vk.svg');"></div> 
+      </a>
+      <a href="https://www.youtube.com" target="_blank"><!--ссылки-->
+        <div class="logo" style="background-image: url('image/youtube.svg');"></div> 
+      </a>
+    </div>
+  </div>
+  <div class="footer-above">© 2024 Курсовая работа. Все права защищены.</div>
+
+
+  <div id="popup1" class="popup"><!--всплывающее окно-->
+    <div class="popup-close" onclick="closePopup()">X</div>
+    <h2><span id="service-name"></span>Стоимость: <span id="price">0</span> руб.</h2>
+    <button onclick="changeQuantity(-1)">-</button>
+    <input type="text" id="quantity" value="1">
+    <button onclick="changeQuantity(1)">+</button>
+    <h3>Введите номер телефона:</h3>
+    <input type="text" id="phone">
+    <button onclick="buyService()">Купить</button>
+  </div>
+  <script>
+    // Функции JavaScript
+    var currentPrice = 0; // Цена выбранной услуги
+    
+    function orderService(serviceId) {//получение цены
+      var serviceButton = document.querySelector('button[onclick="orderService('+serviceId+')"]');
+      var serviceName = serviceButton.getAttribute('data-service-name');
+      currentPrice = parseInt(serviceButton.getAttribute('data-price'));
+      
+      document.getElementById('service-name').innerText = serviceName;
+      document.getElementById('price').innerText = currentPrice;
+      
+      document.getElementById('popup1').style.display = 'block';
+      document.getElementById('quantity').value = 1; // Сброс количества на 1
+    }
+    
+    function closePopup() {//заркытие окна
+      document.getElementById('popup1').style.display = 'none';
+    }
+    
+    function changeQuantity(change) {//изменение цены
+      var quantity = parseInt(document.getElementById('quantity').value);
+      quantity += change;
+      if (quantity < 1) quantity = 1;
+      document.getElementById('quantity').value = quantity;
+      document.getElementById('price').innerText = currentPrice * quantity;
+    }
+    
+    function buyService() {//"покупка"
+      var phone = document.getElementById('phone').value;
+      if (phone) {
+        closePopup();
+        setTimeout(function() {
+          alert('Спасибо за покупку, с вами свяжутся');
+        }, 2000);
+      } else {
+        alert('Пожалуйста, введите номер телефона');
+      }
+    }
+    </script>
+</body>
+</html>

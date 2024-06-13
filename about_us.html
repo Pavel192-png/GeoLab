@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>О нас</title>
+<link rel="icon" href="image/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="css/headers.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/about_as.css">
+<link rel="stylesheet" href="css/footer.css">
+<style>
+    .map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header"><!--хедер-->
+  <div class="header-image" style="background-image: url('image/logo.png');"></div>
+  <div class="header-content">
+    <a href="index.html">Главная</a>
+    <a href="projects.html">Наши проекты</a>
+    <a href="services.html">Услуги</a>
+    <a href="about_us.html">О нас</a>
+  </div>
+  <div class="logos-container">
+    <a href="https://t.me/yourchannel" target="_blank"><!--ссылки-->
+      <div class="logo" style="background-image: url('image/tg.svg');"></div>
+    </a>
+    <a href="https://vk.com/" target="_blank"><!--ссылки-->
+      <div class="logo" style="background-image: url('image/vk.svg');"></div> 
+    </a>
+    <a href="https://www.youtube.com" target="_blank"><!--ссылки-->
+      <div class="logo" style="background-image: url('image/youtube.svg');"></div> 
+    </a>
+  </div>
+</div>
+
+<h1>О нас</h1>
+<h2>GeoLab это частная, новая и развивающаяся лаборатория ГИС и ДЗЗ, которая занимается проектами, научной деятельностью, сбором и хранением информации. Мы также занимаемся оказанием платных услуг от специалистов.</h2>
+<br>
+<h3> Контактные данные:</h3>
+<h3>8 800 555 35 35</h3>
+<h3>geolab2000@gmail.com</h3>
+
+
+<!-- слайдер с отзывами -->
+<div class="slider-container">
+    <h2 style="text-align: center;">Отзывы наших клиентов</h2>
+    <div class="slider">
+      <div class="slide" id="slide-1">
+        <h3>Алексей</h3>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>Отличная лаборатория! Быстро и качественно выполнили все необходимые исследования.</p>
+      </div>
+      <div class="slide" id="slide-2">
+        <h3>Марина</h3>
+        <p>⭐⭐⭐⭐</p>
+        <p>Профессиональный подход и внимание к деталям. Рекомендую!</p>
+      </div>
+      <div class="slide" id="slide-3">
+        <h3>Игорь</h3>
+        <p>⭐⭐⭐⭐</p>
+        <p>Благодарю за оперативную работу. Все данные предоставлены в срок.</p>
+      </div>
+    </div>
+    <button class="prev1" onclick="changeSlide(-1)">❮</button>
+    <button class="next1" onclick="changeSlide(1)">❯</button>
+  </div>
+
+
+
+
+<h2 style="text-align: center;">Наш офис на карте</h2>
+<h4 style="text-align: center;">Тверской бульвар, 15с1</h4>
+<div class="map-container">
+<iframe src="https://yandex.ru/map-widget/v1/?ll=37.600585%2C55.761072&z=16&ol=biz&oid=1175860213"   width="800" height="400"  frameborder="0"></iframe>
+</div>
+
+
+<div class="header" style="height: 200px;">
+  <div class="footer-text" style="position: relative; left: -120px;">
+      <h3>Контактные данные:</h3>
+      <h3>8 800 555 35 35</h3>
+      <h3>geolab2000@gmail.com</h3>
+  </div>
+  <div class="header-content" style="position: relative; left: -120px;">
+    <a href="index.html">Главная</a>
+    <a href="projects.html">Наши проекты</a>
+    <a href="services.html">Услуги</a>
+    <a href="about_us.html">О нас</a>
+  </div>
+  <div class="logos-container" style="position: relative; left: -30px;">
+    <a href="https://t.me/yourchannel" target="_blank"><!--ссылки-->
+      <div class="logo" style="background-image: url('image/tg.svg');"></div>
+    </a>
+    <a href="https://vk.com" target="_blank"><!--ссылки-->
+      <div class="logo" style="background-image: url('image/vk.svg');"></div> 
+    </a>
+    <a href="https://www.youtube.com" target="_blank"><!--ссылки-->
+      <div class="logo" style="background-image: url('image/youtube.svg');"></div> 
+    </a>
+  </div>
+</div>
+<div class="footer-above">© 2024 Курсовая работа. Все права защищены.</div>
+  <script>//слайдер с отзывами
+   var slideIndex = 1;
+showSlides(slideIndex);
+
+function changeSlide(n) {//смена слайдов
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {//показ отзывов
+  var i;
+  var slides = document.getElementsByClassName("slide");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+
+    </script>
+</body>
+</html>
